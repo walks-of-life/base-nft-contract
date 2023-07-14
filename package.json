@@ -1,10 +1,15 @@
 {
   "name": "base-nft-contract",
   "version": "0.1.0",
-  "description": "",
+  "description": "Base NFT collection Solidity contract including Enumerable, Royalty, and team minting implementation.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "walks-of-life",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/walks-of-life/base-nft-contract.git"
+  },
+  "keywords": ["NFT", "NFT collection", "Solidity", "ERC721", "ERC721Enumerable", "ERC721Royalty"],
+  "author": "walks-of-life (https://walksoflife.club)",
   "license": "MIT"
 }
