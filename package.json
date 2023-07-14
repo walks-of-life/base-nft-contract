@@ -9,7 +9,17 @@
     "type": "git",
     "url": "https://github.com/walks-of-life/base-nft-contract.git"
   },
-  "keywords": ["NFT", "NFT collection", "Solidity", "ERC721", "ERC721Enumerable", "ERC721Royalty"],
+  "keywords": [
+    "NFT",
+    "NFT collection",
+    "Solidity",
+    "ERC721",
+    "ERC721Enumerable",
+    "ERC721Royalty"
+  ],
   "author": "walks-of-life (https://walksoflife.club)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.2"
+  }
 }
