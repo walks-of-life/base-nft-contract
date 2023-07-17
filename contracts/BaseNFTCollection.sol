@@ -36,14 +36,13 @@ abstract contract BaseNFTCollection is ERC721Royalty, Ownable, IERC721Enumerable
 
     /**
      * @dev Initializes the contract by setting a `price`, `baseUrl`, `maxTokens` to the token collection.
-     * Also it mints first `firstMintNumber` tokens
+     * Also it mints first `firstMintNumber` tokens and sets royalty feeDenominator (ex: 250 for 2.5%)
      */
-    constructor(uint price_, string memory baseUrl_, uint maxTokens_, uint firstMintNumber) {
+    constructor(uint price_, string memory baseUrl_, uint maxTokens_, uint firstMintNumber, uint96 feeDenominator) {
         price = price_;
         _baseUrl = baseUrl_;
         maxTokens = maxTokens_;
-        // Set 2.5% royalty
-        _setDefaultRoyalty(msg.sender, 250);
+        _setDefaultRoyalty(msg.sender, feeDenominator);
 
         for(uint i=0; i < firstMintNumber;){
             _mintOne(msg.sender);
