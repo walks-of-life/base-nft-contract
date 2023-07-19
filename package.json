@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "Base NFT collection Solidity contract including Enumerable, Royalty, and team minting implementation.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx hardhat test"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,13 @@
   "license": "MIT",
   "dependencies": {
     "@openzeppelin/contracts": "^4.9.2"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.1",
+    "@nomicfoundation/hardhat-ethers": "^3.0.4",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.8",
+    "chai": "^4.3.7",
+    "ethers": "^6.6.4",
+    "hardhat": "^2.17.0"
   }
 }
