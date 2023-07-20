@@ -1,7 +1,23 @@
 /** @type import('hardhat/config').HardhatUserConfig */
 require("@nomicfoundation/hardhat-ethers");
 require("@nomicfoundation/hardhat-chai-matchers");
+require("hardhat-gas-reporter");
+require("dotenv").config()
+
 
 module.exports = {
-  solidity: "0.8.19",
+  solidity: {
+    version: "0.8.19",
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 200
+      }
+    }
+  },
+  gasReporter: {
+    enabled: process.env.REPORT_GAS === "true" ? true : false,
+    currency: 'USD',
+    coinmarketcap: process.env.COIN_MARKET_CAP_KEY,
+  }
 };
