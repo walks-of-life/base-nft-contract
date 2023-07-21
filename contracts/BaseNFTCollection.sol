@@ -86,7 +86,7 @@ abstract contract BaseNFTCollection is ERC721Royalty, Ownable, IERC721Enumerable
      * Requirements:
      * - Only owner can call
      */
-    function setBaseURI(string memory baseUrl_) public onlyOwner {
+    function setBaseURI(string memory baseUrl_) public virtual onlyOwner {
         _baseUrl = baseUrl_;
     }
 
@@ -98,9 +98,36 @@ abstract contract BaseNFTCollection is ERC721Royalty, Ownable, IERC721Enumerable
      * - Correct price is sent
      * - Maximum tokens number not reached
      */
-    function mint() public payable {
+    function mint() public virtual payable {
         require(msg.value == price, "Incorrect price");
         _mintOne(msg.sender);
+    }
+
+    /**
+     * @dev Return the maximum number of tokens allowed when calling mintMiltiple
+     */
+    function _maximumPerTransaction() internal pure virtual returns (uint) {
+        return 5;
+    }
+
+    /**
+     * @dev Safely mints multiple tokens and transfers them to the sender.
+     *
+     * Requirements:
+     *
+     * - Maximum tokens per transaction not reached
+     * - Correct price is sent
+     * - Maximum tokens number not reached
+     */
+    function mintMultiple(uint amount) public virtual payable {
+        require(amount <= _maximumPerTransaction(), "Maximum tokens per transaction reached");
+        require(msg.value == price * amount, "Incorrect price");
+        for(uint i=0; i<amount;){
+            _mintOne(msg.sender);
+            unchecked {
+                i++;
+            }
+        }
     }
 
     /**
@@ -111,7 +138,7 @@ abstract contract BaseNFTCollection is ERC721Royalty, Ownable, IERC721Enumerable
      * - Only owner can call
      * - Maximum tokens number not reached
      */
-    function teamMint(uint amount, address to) public onlyOwner {
+    function teamMint(uint amount, address to) public virtual onlyOwner {
         for(uint i=0; i<amount;){
             _mintOne(to);
             unchecked {
@@ -126,7 +153,7 @@ abstract contract BaseNFTCollection is ERC721Royalty, Ownable, IERC721Enumerable
      * Requirements:
      * - Only owner can call
      */
-    function changePrice(uint newPrice) public onlyOwner {
+    function changePrice(uint newPrice) public virtual onlyOwner {
         price = newPrice;
     }
 
@@ -137,7 +164,7 @@ abstract contract BaseNFTCollection is ERC721Royalty, Ownable, IERC721Enumerable
      * Requirements:
      * - Only owner can call
      */
-    function changeRoyalty(address receiver, uint96 feeNumerator) public onlyOwner {
+    function changeRoyalty(address receiver, uint96 feeNumerator) public virtual onlyOwner {
         _setDefaultRoyalty(receiver, feeNumerator);
     }
 
@@ -150,7 +177,7 @@ abstract contract BaseNFTCollection is ERC721Royalty, Ownable, IERC721Enumerable
     * - Only owner is allowed to call
     * - Balance is not 0
     */
-    function withdraw() public onlyOwner  {
+    function withdraw() public virtual onlyOwner  {
         require(address(this).balance > 0, "Balance is empty");
         address _owner = owner();
         uint256 amount = address(this).balance;

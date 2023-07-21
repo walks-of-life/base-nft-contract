@@ -20,4 +20,16 @@ contract GasUsageMock is BaseNFTCollection {
     function teamMintHundred() public {
         teamMint(100, msg.sender);
     }
+
+    function mintMultipleOne() public payable {
+        mintMultiple(1);
+    }
+
+    function mintMultipleTwo() public payable {
+        mintMultiple(2);
+    }
+
+    function mintMultipleFive() public payable {
+        mintMultiple(5);
+    }
 }

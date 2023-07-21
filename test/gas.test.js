@@ -1,5 +1,5 @@
 const { loadFixture } = require("@nomicfoundation/hardhat-network-helpers");
-const { originalPrice, deployGasContractFixture } = require('./utils')
+const { originalPrice, deployGasContractFixture } = require('./utils');
 
 describe("Gas Usage", function () {
 
@@ -49,6 +49,27 @@ describe("Gas Usage", function () {
     const { contract, address1 } = await loadFixture(deployGasContractFixture);
     for (let i = 1; i < 6; i++) {
       await contract.setApprovalForAll(address1.getAddress(), true);
+    }
+  });
+
+  it('runs mintMultipleOne 5 times', async function () {
+    const { contract } = await loadFixture(deployGasContractFixture);
+    for (let i = 0; i < 5; i++) {
+      await contract.mintMultipleOne({ value: originalPrice })
+    }
+  });
+
+  it('runs mintMultipleTwo 5 times', async function () {
+    const { contract } = await loadFixture(deployGasContractFixture);
+    for (let i = 0; i < 5; i++) {
+      await contract.mintMultipleTwo({ value: originalPrice * BigInt(2) })
+    }
+  });
+
+  it('runs mintMultipleFive 5 times', async function () {
+    const { contract } = await loadFixture(deployGasContractFixture);
+    for (let i = 0; i < 5; i++) {
+      await contract.mintMultipleFive({ value: originalPrice * BigInt(5) })
     }
   });
 })

@@ -1,6 +1,6 @@
 {
   "name": "base-nft-contract",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Base NFT collection Solidity contract including Enumerable, Royalty, and team minting implementation.",
   "scripts": {
     "test": "npx hardhat test"
