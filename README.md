@@ -1,3 +1,8 @@
+[![NPM][downloads-shield]][downloads-url]
+[![GitHub issues][issues-shield]][issues-url]
+[![License][license-shield]][license-url]
+[![Version][version-shield]][version-url]
+
 # About
 
 Base NFT collection contract written in Solidity. It includes Enumerable, Royalty, multiple minting, and team minting features.
@@ -63,3 +68,15 @@ Parameters:
 - maxTokens_: Maximum number of tokens
 - firstMintNumber: How many NFTs will be minted and transferred to the owner when deployed
 - feeNumerator: Royalty fraction - ex: 250 = 2.5%
+
+[downloads-shield]: https://img.shields.io/npm/dt/base-nft-contract?style=for-the-badge
+[downloads-url]: https://www.npmjs.com/package/base-nft-contract
+
+[issues-shield]: https://img.shields.io/github/issues/walks-of-life/base-nft-contract?style=for-the-badge
+[issues-url]: https://github.com/walks-of-life/base-nft-contract/issues
+
+[license-shield]: https://img.shields.io/badge/License-MIT-green?style=for-the-badge
+[license-url]: https://github.com/walks-of-life/base-nft-contract/blob/main/LICENSE
+
+[version-shield]: https://img.shields.io/npm/v/base-nft-contract?style=for-the-badge
+[version-url]: https://www.npmjs.com/package/base-nft-contract
