@@ -52,7 +52,7 @@ import "base-nft-contract/contracts/BaseNFTCollection.sol";
 
 contract MyNFTCollection is BaseNFTCollection {
 
-    constructor() BaseNFTCollection(10000000000000000, "https://yourbase.url/nft/", 5000, 40, 250) ERC721("Walks of Life", "WoL") {}
+    constructor() BaseNFTCollection(10000000000000000, "https://yourbase.url/nft/", 5000, 40, 250) ERC721("My NFT Collection", "MNC") {}
 
 }
 ```
