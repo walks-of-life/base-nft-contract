@@ -224,6 +224,5 @@ abstract contract BaseNFTCollection is ERC721Royalty, Ownable, IERC721Enumerable
                 currentIndex++;
             }
         }
-        revert("Unable to get token of owner by index");
     }
 }
