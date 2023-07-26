@@ -83,4 +83,4 @@ Parameters:
 [version-url]: https://www.npmjs.com/package/base-nft-contract
 
 [build-shield]: https://img.shields.io/github/actions/workflow/status/walks-of-life/base-nft-contract/run_tests.yaml?style=for-the-badge
-[build-url]: https://www.npmjs.com/package/base-nft-contract
+[build-url]: https://github.com/walks-of-life/base-nft-contract/actions/workflows/run_tests.yaml

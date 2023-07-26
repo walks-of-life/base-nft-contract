@@ -206,7 +206,7 @@ abstract contract BaseNFTCollection is ERC721Royalty, Ownable, IERC721Enumerable
      */
     function tokenByIndex(uint256 index) public view virtual override returns (uint256) {
         require(index < totalSupply(), "Index out of bounds");
-        return index;
+        return index + 1;
     }
 
     /**
