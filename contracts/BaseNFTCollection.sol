@@ -192,7 +192,7 @@ abstract contract BaseNFTCollection is ERC721Royalty, Ownable, IERC721Enumerable
         revert("Renounce ownership not supported");
     }
 
-    //Enumberable
+    //Enumerable
 
     /**
      * @dev See {IERC721Enumerable-totalSupply}.
@@ -216,13 +216,16 @@ abstract contract BaseNFTCollection is ERC721Royalty, Ownable, IERC721Enumerable
         require(index < balanceOf(owner), "Owner index out of bounds");
         uint256 total = totalSupply();
         uint256 currentIndex = 0;
+        uint256 token;
         for (uint256 i = 1; i <= total; i++) {
             if (ownerOf(i) == owner) {
                 if (currentIndex == index) {
-                    return i;
+                    token = i;
+                    break;
                 }
                 currentIndex++;
             }
         }
+        return token;
     }
 }
