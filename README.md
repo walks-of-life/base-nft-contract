@@ -1,7 +1,8 @@
-[![NPM][downloads-shield]][downloads-url]
+[![Build][build-shield]][build-url]
+[![Version][version-shield]][version-url]
 [![GitHub issues][issues-shield]][issues-url]
 [![License][license-shield]][license-url]
-[![Version][version-shield]][version-url]
+[![NPM][downloads-shield]][downloads-url]
 
 # About
 
@@ -80,3 +81,6 @@ Parameters:
 
 [version-shield]: https://img.shields.io/npm/v/base-nft-contract?style=for-the-badge
 [version-url]: https://www.npmjs.com/package/base-nft-contract
+
+[build-shield]: https://img.shields.io/github/actions/workflow/status/walks-of-life/base-nft-contract/run_tests.yaml?style=for-the-badge
+[build-url]: https://www.npmjs.com/package/base-nft-contract
