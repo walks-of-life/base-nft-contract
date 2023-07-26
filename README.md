@@ -1,4 +1,5 @@
 [![Build][build-shield]][build-url]
+[![Coverage][coverage-shield]][coverage-url]
 [![Version][version-shield]][version-url]
 [![GitHub issues][issues-shield]][issues-url]
 [![License][license-shield]][license-url]
@@ -84,3 +85,6 @@ Parameters:
 
 [build-shield]: https://img.shields.io/github/actions/workflow/status/walks-of-life/base-nft-contract/run_tests.yaml?style=for-the-badge
 [build-url]: https://github.com/walks-of-life/base-nft-contract/actions/workflows/run_tests.yaml
+
+[coverage-shield]: https://img.shields.io/codecov/c/github/walks-of-life/base-nft-contract?style=for-the-badge
+[coverage-url]: https://app.codecov.io/gh/walks-of-life/base-nft-contract
